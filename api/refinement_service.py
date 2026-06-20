@@ -10,7 +10,10 @@ from pydantic import BaseModel
 from api.common import get_preprocessor, get_index, get_embedding
 from services.query_refinement import QueryRefinement
 
-app = FastAPI(title="Query Refinement Service")
+app = FastAPI(title="Query Refinement Service", docs_url=None)
+
+from api.common import enable_offline_docs
+enable_offline_docs(app)
 
 
 @functools.lru_cache(maxsize=1)

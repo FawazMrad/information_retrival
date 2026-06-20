@@ -12,7 +12,10 @@ from pydantic import BaseModel
 import config
 from api.common import service_url
 
-app = FastAPI(title="API Gateway")
+app = FastAPI(title="API Gateway", docs_url=None)
+
+from api.common import enable_offline_docs
+enable_offline_docs(app)
 
 
 class GatewaySearch(BaseModel):

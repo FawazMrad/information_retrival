@@ -8,7 +8,10 @@ from pydantic import BaseModel
 
 from api.common import get_preprocessor
 
-app = FastAPI(title="Preprocessing Service")
+app = FastAPI(title="Preprocessing Service", docs_url=None)
+
+from api.common import enable_offline_docs
+enable_offline_docs(app)
 
 
 class PrepRequest(BaseModel):

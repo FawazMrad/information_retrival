@@ -16,7 +16,10 @@ from api.common import service_url
 from services import data_loader as dl
 from services.evaluation import evaluate
 
-app = FastAPI(title="Evaluation Service")
+app = FastAPI(title="Evaluation Service", docs_url=None)
+
+from api.common import enable_offline_docs
+enable_offline_docs(app)
 
 
 @functools.lru_cache(maxsize=1)

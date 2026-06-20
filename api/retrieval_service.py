@@ -14,7 +14,10 @@ from api.common import (get_preprocessor, get_index, get_bm25, get_tfidf,
 from services.search import TfidfSearcher, BM25Searcher, EmbeddingSearcher
 from services.hybrid import HybridSearcher
 
-app = FastAPI(title="Retrieval & Ranking Service")
+app = FastAPI(title="Retrieval & Ranking Service", docs_url=None)
+
+from api.common import enable_offline_docs
+enable_offline_docs(app)
 
 
 @functools.lru_cache(maxsize=1)

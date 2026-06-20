@@ -3,7 +3,7 @@
 Each case lists **what it checks**, the **steps/input**, and the **expected result**.
 Expected numbers come from the built system; small variations are normal.
 
-Legend: ✅ pass criteria.
+Legend:  pass criteria.
 
 ---
 
@@ -12,7 +12,7 @@ Legend: ✅ pass criteria.
 | ID | Checks | Steps | Expected |
 |----|--------|-------|----------|
 | ENV-1 | Dependencies install | `pip install -r requirements.txt` | completes with no errors |
-| ENV-2 | Dataset loads + has qrels | `python -m scripts.run_step1_preprocessing` | DATASET STATS shows **documents 522,931 · queries 10,000 · qrels 15,675** ✅ |
+| ENV-2 | Dataset loads + has qrels | `python -m scripts.run_step1_preprocessing` | DATASET STATS shows **documents 522,931   queries 10,000   qrels 15,675**  |
 | ENV-3 | Full preprocessing | `python -m scripts.run_step1_preprocessing --full --skip-samples` | prints `Done. Preprocessed 522,931 documents`; creates `data/quora_processed_docs.jsonl` |
 
 ## 2. Preprocessing (req 1)
@@ -125,7 +125,7 @@ Legend: ✅ pass criteria.
 | EDGE-2 | All-stopword query | "the of in a" | empty after preprocessing; graceful "no results" |
 | EDGE-3 | Out-of-vocabulary query | "zzzqxqz" | no matches; no crash |
 | EDGE-4 | Very long query | a paragraph | processed + ranked normally |
-| EDGE-5 | Non-ASCII / symbols | "¿qué? 😀 #stocks" | symbols stripped; "stocks" stemmed and searched |
+| EDGE-5 | Non-ASCII / symbols | "¿qué?  #stocks" | symbols stripped; "stocks" stemmed and searched |
 | EDGE-6 | Repeated startup | re-run any search script | NLTK not re-downloaded (fast startup) |
 
 ---

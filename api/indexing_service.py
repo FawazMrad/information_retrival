@@ -7,7 +7,10 @@ from fastapi import FastAPI
 
 from api.common import get_index
 
-app = FastAPI(title="Indexing Service")
+app = FastAPI(title="Indexing Service", docs_url=None)
+
+from api.common import enable_offline_docs
+enable_offline_docs(app)
 
 
 @app.get("/health")

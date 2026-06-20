@@ -1,0 +1,32 @@
+# ============================================================
+# IR Project 2026 - requirements
+# Install with:  pip install -r requirements.txt
+# ============================================================
+
+# --- Step 1 (needed now) ---
+ir_datasets        # loading the dataset (corpus + queries + qrels)
+nltk               # preprocessing: tokenize / stopwords / stemming / lemmatization
+tqdm               # progress bars
+numpy
+pandas
+
+# --- Later steps (you can install these now or later) ---
+scikit-learn       # TF-IDF (VSM) + cosine similarity
+rank-bm25          # BM25 representation
+# sentence-transformers   # BERT embeddings  (heavy, ~a few hundred MB)
+gensim             # Word2Vec (optional second embedding model)
+scipy              # sparse matrices
+joblib             # saving/loading models
+
+# --- SOA services + UI (Step 7 & 9) ---
+fastapi            # each service as an API
+uvicorn            # ASGI server to run the services
+requests           # service-to-service / UI-to-gateway calls
+streamlit          # simple Python UI
+
+# --- Evaluation (Step 8) ---
+ir-measures        # MAP, nDCG, P@10, Recall  (or use pytrec_eval)
+
+# --- Optional / additional features ---
+faiss-cpu          # vector store (for RAG / vector-store feature)
+matplotlib         # evaluation charts for the report
